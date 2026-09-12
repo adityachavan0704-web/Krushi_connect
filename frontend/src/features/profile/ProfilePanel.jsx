@@ -151,9 +151,17 @@ export const ProfilePanel = ({ showHead = true }) => {
             </Button>
           </div>
 
-          <Button variant="secondary" icon={LogOut} onClick={logout}>
-            {t('crop.profile.logout')}
-          </Button>
+          <div className="flex justify-end">
+            <Button
+              variant="secondary"
+              icon={LogOut}
+              onClick={logout}
+              full={false}
+              className="!min-h-0 !h-9 !px-3 !text-xs !gap-1.5 [&_svg]:!h-4 [&_svg]:!w-4"
+            >
+              {t('crop.profile.logout')}
+            </Button>
+          </div>
         </>
       )}
     </section>
