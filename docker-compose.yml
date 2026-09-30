@@ -13,7 +13,7 @@ services:
       - MONGO_INITDB_DATABASE=krishiflow
     restart: always
 
-  # Node.js Express Backend Orchestrator
+  # Nod e.js Express Backend Orchestrator
   backend:
     build:
       context: ./backend

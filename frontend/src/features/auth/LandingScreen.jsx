@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import {
-  Sprout, Truck, Store, Boxes, ArrowRight, TrendingUp, TrendingDown, Minus, Navigation, ShieldAlert,
+  Sprout, Truck, Store, Boxes, ArrowRight, TrendingUp, TrendingDown, Minus, Navigation, ShieldAlert, Handshake,
 } from 'lucide-react';
 import { useT } from '../../i18n/useT';
 import { LanguagePicker } from '../../shared/LanguagePicker';
@@ -27,6 +27,7 @@ const ROLE_ITEMS = [
   { icon: Sprout, labelKey: 'roles.farmer', noteKey: 'landing.roleFarmer' },
   { icon: Store, labelKey: 'roles.buyer', noteKey: 'landing.roleBuyer' },
   { icon: Boxes, labelKey: 'roles.logistics', noteKey: 'landing.roleLogistics' },
+  { icon: Handshake, labelKey: 'roles.dalal', noteKey: 'landing.roleDalal' },
 ];
 
 export const LandingScreen = ({ onEnter }) => {

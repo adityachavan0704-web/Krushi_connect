@@ -187,7 +187,8 @@
     "label": "I am a",
     "farmer": "Farmer",
     "buyer": "Buyer",
-    "logistics": "Fleet owner"
+    "logistics": "Fleet owner",
+    "dalal": "Mandi Broker"
   },
   "nav": {
     "farmer": {
@@ -206,6 +207,12 @@
       "fleet": "Fleet",
       "routes": "Routes",
       "jobs": "Jobs"
+    },
+    "dalal": {
+      "arrivals": "Arrivals",
+      "rates": "Rates",
+      "analytics": "Analytics",
+      "farmers": "Farmers"
     }
   },
   "today": {

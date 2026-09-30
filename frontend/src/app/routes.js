@@ -1,4 +1,4 @@
-import { Sun, IndianRupee, Truck, Sprout, ClipboardList, Route, Store, PackageCheck, User, Shuffle, Boxes } from 'lucide-react';
+import { Sun, IndianRupee, Truck, Sprout, ClipboardList, Route, Store, PackageCheck, User, Shuffle, Boxes, Handshake, BarChart3, Users, Scale } from 'lucide-react';
 
 /**
  * Every destination in the app, in one table.
@@ -29,6 +29,12 @@ export const ROLES = {
    * owners below.
    */
   LOGISTICS: 'Logistics',
+  /*
+   * The Dalal (commission agent / mandi broker). The person who sits at the
+   * mandi gate, grades arriving lots, negotiates the price between farmer and
+   * buyer, and records the deal.
+   */
+  DALAL: 'Dalal',
 };
 
 /** Older stored sessions and the backend use several spellings for each role. */
@@ -37,6 +43,7 @@ export const normaliseRole = (role) => {
     // Legacy. These accounts own vehicles like anyone else.
     || role === 'Transporter' || role === 'Driver') return ROLES.LOGISTICS;
   if (role === 'Trader' || role === 'Buyer' || role === 'APMC Buyer') return ROLES.BUYER;
+  if (role === 'Dalal') return ROLES.DALAL;
   return ROLES.FARMER;
 };
 
@@ -64,6 +71,12 @@ export const TABS_BY_ROLE = {
   [ROLES.FARMER]: FARMER_TABS,
   [ROLES.BUYER]: BUYER_TABS,
   [ROLES.LOGISTICS]: LOGISTICS_TABS,
+  [ROLES.DALAL]: [
+    { id: 'dalal-arrivals',  labelKey: 'nav.dalal.arrivals',  icon: Handshake },
+    { id: 'dalal-rates',     labelKey: 'nav.dalal.rates',     icon: Scale },
+    { id: 'dalal-analytics', labelKey: 'nav.dalal.analytics', icon: BarChart3 },
+    { id: 'dalal-farmers',   labelKey: 'nav.dalal.farmers',   icon: Users },
+  ],
 };
 
 /**
@@ -100,7 +113,7 @@ export const isTabValidForRole = (tabId, role) =>
   || tabsForRole(role).some((tab) => tab.id === tabId);
 
 export const ALL_TAB_IDS = [
-  ...[...FARMER_TABS, ...BUYER_TABS, ...LOGISTICS_TABS].map((t) => t.id),
+  ...[...FARMER_TABS, ...BUYER_TABS, ...LOGISTICS_TABS, ...TABS_BY_ROLE[ROLES.DALAL]].map((t) => t.id),
   PROFILE_TAB,
   VRP_DEMO_TAB,
 ];

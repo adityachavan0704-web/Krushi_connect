@@ -4,7 +4,7 @@ const logger = require('../utils/logger');
 
 const pythonClient = axios.create({
   baseURL: process.env.PYTHON_ENGINE_URL || 'http://localhost:8000',
-  timeout: 5000,
+  timeout: 2000,
   headers: { 'Content-Type': 'application/json' }
 });
 

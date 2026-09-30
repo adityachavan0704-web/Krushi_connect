@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  Mail, Lock, User, Phone, MapPin, Sprout, Truck, Store, Boxes,
+  Mail, Lock, User, Phone, MapPin, Sprout, Truck, Store, Boxes, Handshake,
   ArrowRight, ArrowLeft, Loader2, AlertTriangle, CloudOff, IndianRupee, Route, BellRing, ChevronDown,
 } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
@@ -47,6 +47,7 @@ const SAMPLE_ACCOUNTS = [
   { role: ROLES.FARMER, email: 'kiran.farmer@krishiflow.ai', icon: Sprout, labelKey: 'roles.farmer' },
   { role: ROLES.LOGISTICS, email: 'vikram.fleet@krishiflow.ai', icon: Boxes, labelKey: 'roles.logistics' },
   { role: ROLES.BUYER, email: 'rajesh.buyer@krishiflow.ai', icon: Store, labelKey: 'roles.buyer' },
+  { role: ROLES.DALAL, email: 'govind.dalal@krishiflow.ai', icon: Handshake, labelKey: 'roles.dalal' },
 ];
 const SAMPLE_PASSWORD = 'krishi@2026';
 
@@ -291,11 +292,12 @@ export const AuthScreen = ({ initialMode = 'login', onBack }) => {
                   label={t('auth.chooseRole')}
                   value={role}
                   onChange={setRole}
-                  columns={3}
+                  columns={2}
                   options={[
                     { id: ROLES.FARMER, label: t('roles.farmer'), icon: Sprout },
                     { id: ROLES.LOGISTICS, label: t('roles.logistics'), icon: Boxes },
                     { id: ROLES.BUYER, label: t('roles.buyer'), icon: Store },
+                    { id: ROLES.DALAL, label: t('roles.dalal'), icon: Handshake },
                   ]}
                 />
               )}

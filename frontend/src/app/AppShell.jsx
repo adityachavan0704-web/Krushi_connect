@@ -31,6 +31,11 @@ const BuyerRatesScreen = lazy(() => import('../features/buyer/BuyerRatesScreen')
 const BuyerInboundScreen = lazy(() => import('../features/buyer/BuyerInboundScreen').then((m) => ({ default: m.BuyerInboundScreen })));
 const ProfilePanel = lazy(() => import('../features/profile/ProfilePanel').then((m) => ({ default: m.ProfilePanel })));
 
+const DalalArrivalsScreen = lazy(() => import('../features/dalal/DalalArrivalsScreen').then((m) => ({ default: m.DalalArrivalsScreen })));
+const DalalRatesScreen = lazy(() => import('../features/dalal/DalalRatesScreen').then((m) => ({ default: m.DalalRatesScreen })));
+const DalalAnalyticsScreen = lazy(() => import('../features/dalal/DalalAnalyticsScreen').then((m) => ({ default: m.DalalAnalyticsScreen })));
+const DalalFarmersScreen = lazy(() => import('../features/dalal/DalalFarmersScreen').then((m) => ({ default: m.DalalFarmersScreen })));
+
 
 const Loading = () => {
   const { t } = useT();
@@ -69,6 +74,15 @@ const screenFor = (tabId, setActiveTab) => {
       return <BuyerInboundScreen />;
     case 'buyer-profile':
       return <div className="pt-4"><ProfilePanel /></div>;
+
+    case 'dalal-arrivals':
+      return <DalalArrivalsScreen />;
+    case 'dalal-rates':
+      return <DalalRatesScreen />;
+    case 'dalal-analytics':
+      return <DalalAnalyticsScreen />;
+    case 'dalal-farmers':
+      return <DalalFarmersScreen />;
 
     /*
      * Unreachable: routes.js is the only source of tab ids and every one of

@@ -52,7 +52,7 @@ const isOffline = (err) => !err.response;
 
 export const fetchHealthStatus = async () => {
   try {
-    const res = await axios.get(`${API_BASE_URL}/health`, { timeout: 5000 });
+    const res = await axios.get(`${API_BASE_URL}/health`, { timeout: 10000 });
     return res.data;
   } catch (err) {
     return { status: 'offline', aiEngineStatus: 'offline', dbConnected: false };

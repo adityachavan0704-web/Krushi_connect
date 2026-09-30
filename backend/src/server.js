@@ -96,4 +96,4 @@ server.listen(PORT, async () => {
   } catch (err) {
     logger.warn(`Startup Knowledge Base indexing notice: ${err.message}`);
   }
-});
+}); 
